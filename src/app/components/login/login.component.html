@@ -1,0 +1,53 @@
+<div class="container">
+  <form #jobForm="ngForm" (ngSubmit)="jobSubmit(jobForm)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        required
+        ngModel
+        name="Email"
+      />
+      <div
+        *ngIf="
+          jobForm.controls['Email'] &&
+          jobForm.controls['Email'].touched &&
+          !jobForm.controls['Email'].valid
+        "
+      >
+        <small id="emailHelp" class="text-danger">
+          please insert your Email
+        </small>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Password"
+        required
+        ngModel
+        name="password"
+      />
+      <div
+        *ngIf="
+          jobForm.controls['password'] &&
+          jobForm.controls['password'].touched &&
+          !jobForm.controls['password'].valid
+        "
+      >
+        <small id="emailHelp" class="text-danger">
+          please insert your Password
+        </small>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Log in</button>
+  </form>
+</div>

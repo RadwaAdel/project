@@ -1,0 +1,105 @@
+<div class="container">
+    <h1  style="text-align: center;">Register Now</h1>
+<form  [formGroup]="reactiveFrom" (ngSubmit)="handleForm()" >
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">UserName</label>
+            <input type="text" 
+            class="form-control"
+             id="inputEmail4" 
+             placeholder="UserName"
+             required 
+             formControlName="UserName">
+              <div *ngIf="reactiveFrom.controls['UserName'].touched && !reactiveFrom.controls['UserName'].valid ">
+                 <small 
+                     id="emailHelp" 
+                     class="text-danger">
+                     please insert your UserName
+                 </small>
+             </div>
+          </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input type="email"
+         class="form-control"
+          id="inputEmail4" 
+          placeholder="Email"
+          required 
+          formControlName="Email">
+           <div *ngIf="reactiveFrom.controls['Email'].touched && !reactiveFrom.controls['Email'].valid ">
+              <small 
+                  id="emailHelp" 
+                  class="text-danger">
+                  please insert your Email
+              </small>
+          </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Password</label>
+        <input type="password"
+         class="form-control" 
+         id="inputPassword4" 
+         placeholder="Password"
+         required 
+         formControlName="Password">
+          <div *ngIf="reactiveFrom.controls['Password'].touched && !reactiveFrom.controls['Password'].valid ">
+             <small 
+                 id="emailHelp" 
+                 class="text-danger">
+                 please insert your Password
+             </small>
+         </div>
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+
+      <label for="inputAddress">Address</label>
+      <input type="text"
+       class="form-control"
+        id="inputAddress" 
+        placeholder="1234 Main St"
+        required 
+        formControlName="Address">
+         <div *ngIf="reactiveFrom.controls['Address'].touched && !reactiveFrom.controls['Address'].valid ">
+            <small 
+                id="emailHelp" 
+                class="text-danger">
+                please insert your Address
+            </small>
+        </div>
+    </div>
+</div>
+    
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="text"
+         class="form-control"
+          id="inputCity"
+          required 
+          formControlName="City">
+           <div *ngIf="reactiveFrom.controls['City'].touched && !reactiveFrom.controls['City'].valid ">
+              <small 
+                  id="emailHelp" 
+                  class="text-danger">
+                  please insert your City
+              </small>
+          </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState"> Gender</label>
+        <select id="inputState" class="form-control">
+          <option selected>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+     
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+    <button type="submit" class="btn btn-primary">Register Now</button>
+    </div>
+    </div>
+  </form>
+  </div>
