@@ -10,7 +10,7 @@ export class AuthService {
   createuser(name: string, email: string, password: string) {
     const authData: AuthData = { name: name, email: email, password: password };
     this.http
-      .post('http://localhost:7000/user', authData)
+      .post('http://localhost:5000/user', authData)
       .subscribe((response) => {
         console.log(response);
       });

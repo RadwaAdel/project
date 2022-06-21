@@ -17,27 +17,28 @@ export class RegisterComponent implements OnInit {
       City: new FormControl(' ', [Validators.required]),
     });
   }
-  handleForm() {
-    console.log(this.reactiveFrom);
-  }
-
+  
   get fullName() {
-    return this.reactiveFrom.get('fullName');
+    return this.reactiveFrom.get('UserName');
   }
 
   get email() {
-    return this.reactiveFrom.get('email');
+    return this.reactiveFrom.get('Email');
   }
   get password() {
-    return this.reactiveFrom.get('password');
+    return this.reactiveFrom.get('Password');
   }
-
-  signupSubmit() {
+  handleForm() {
+    console.log(this.email?.value,this.fullName?.value,this.password?.value);
     this.authServise.createuser(
       this.fullName?.value,
       this.email?.value,
       this.password?.value
     );
+  }
+
+  signupSubmit() {
+   
   }
 
   ngOnInit(): void {}
